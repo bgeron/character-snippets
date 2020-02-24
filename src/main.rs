@@ -11,7 +11,8 @@ use structopt::StructOpt;
 ///
 /// This is particularly useful for a file with snippets for Unicode characters.
 ///
-/// The format of the input file should be as follows:
+/// You can use the builtin snippets file (--builtin) or specify a custom TOML file,
+/// which should look as follows:
 ///
 ///     [Snippets]
 ///       xbrackets = "〚$1〛"

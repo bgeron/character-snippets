@@ -5,9 +5,22 @@
 [![Travis Build Status](https://travis-ci.org/bgeron/character-snippets.svg?branch=master)](https://travis-ci.org/bgeron/character-snippets)
 [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/90nssws7muesco60?svg=true)](https://ci.appveyor.com/project/bgeron/character-snippets)
 
-A small program that generates a Visual Studio Code snippets file from a TOML input file.
+A small program that generates a Visual Studio Code snippets file, with either builtin snippets (>1000 Unicode characters) or a custom TOML input file.
 
-This is particularly useful for a file with snippets for Unicode characters.
+```sh
+# Install with Rust. Alternatively, download a binary from the Releases page.
+cargo install character-snippets
+
+# Put a snippets file in a good location for Visual Studio Code on Linux. These
+# snippets will be visible in all workspaces.
+character-snippets --builtin > ~/.config/Code/User/snippets/chars.code-snippets
+
+# Use a custom snippets file.
+character-snippets my-custom-snippets.toml > ~/.config/Code/User/snippets/chars.code-snippets
+
+# To find out where the snippets files are located on your operating system, run
+# "Preferences: Configure User Snippets" and create a new global snippets file.
+```
 
 The format of the input file should be as follows:
 
@@ -23,8 +36,6 @@ The format of the input file should be as follows:
 Visual Studio Code will interpret variables such as `$1` as placeholders.
 
 Output will be sent to standard output.
-
-TODO document better
 
 # License
 
