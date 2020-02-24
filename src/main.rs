@@ -158,8 +158,11 @@ mod test {
     fn builtin_toml_output() {
         let in_toml_str = toml_str_from_args(&Cli::builtin_for_test()).unwrap();
         let in_toml = toml::from_str(&in_toml_str).unwrap();
-        let mut buf : Vec<u8> = Vec::new();
+        let mut buf: Vec<u8> = Vec::new();
         gen_vscode(&*parse_toml(in_toml).unwrap(), false, &mut buf).unwrap();
-        assert_eq!(blake3::hash(&*buf).to_hex().as_str(), "3e7ef23772f36408e071bcdb385a977e2c22536e85ccd52cb9909ab1617fa3f5");
+        assert_eq!(
+            blake3::hash(&*buf).to_hex().as_str(),
+            "3e7ef23772f36408e071bcdb385a977e2c22536e85ccd52cb9909ab1617fa3f5"
+        );
     }
 }
