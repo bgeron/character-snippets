@@ -1,0 +1,28 @@
+[package]
+name = "character-snippets"
+version = "0.1.0"
+authors = ["Bram Geron <bram@bram.xyz>"]
+edition = "2018"
+
+description = "Convert a TOML file in a certain format to a Visual Studio Code snippets file. Contains many useful snippets by default."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/rusty-plasma/smallbigint"
+categories = ["command-line-utilities"]
+keywords = ["vscode", "snippet"]
+readme = "README.md"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+toml = "0.5.6"
+serde = { version = "1.0", features = ["derive"] }
+clap = "2.33.0"
+structopt = "0.3.9"
+exitfailure = "0.5.1"
+failure = "0.1.6"
+log = "0.4.8"
+env_logger = "0.7.1"
+serde_json = "1.0.48"
+indexmap = { version = "1.3.0", features = ["serde-1"]}
+chrono = "0.4.10"
