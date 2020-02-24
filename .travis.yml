@@ -12,31 +12,12 @@ sudo: required
 env:
   global:
     # TODO Update this to match the name of your project.
-    - CRATE_NAME=trust
+    - CRATE_NAME=character-snippets
 
 matrix:
   # TODO These are all the build jobs. Adjust as necessary. Comment out what you
   # don't need
   include:
-    # Android
-    - env: TARGET=aarch64-linux-android DISABLE_TESTS=1
-    - env: TARGET=arm-linux-androideabi DISABLE_TESTS=1
-    - env: TARGET=armv7-linux-androideabi DISABLE_TESTS=1
-    - env: TARGET=i686-linux-android DISABLE_TESTS=1
-    - env: TARGET=x86_64-linux-android DISABLE_TESTS=1
-
-    # iOS
-    - env: TARGET=aarch64-apple-ios DISABLE_TESTS=1
-      os: osx
-    - env: TARGET=armv7-apple-ios DISABLE_TESTS=1
-      os: osx
-    - env: TARGET=armv7s-apple-ios DISABLE_TESTS=1
-      os: osx
-    - env: TARGET=i386-apple-ios DISABLE_TESTS=1
-      os: osx
-    - env: TARGET=x86_64-apple-ios DISABLE_TESTS=1
-      os: osx
-
     # Linux
     - env: TARGET=aarch64-unknown-linux-gnu
     - env: TARGET=arm-unknown-linux-gnueabi
@@ -68,14 +49,6 @@ matrix:
     # Windows
     - env: TARGET=x86_64-pc-windows-gnu
 
-    # Bare metal
-    # These targets don't support std and as such are likely not suitable for
-    # most crates.
-    # - env: TARGET=thumbv6m-none-eabi
-    # - env: TARGET=thumbv7em-none-eabi
-    # - env: TARGET=thumbv7em-none-eabihf
-    # - env: TARGET=thumbv7m-none-eabi
-
     # Testing other channels
     - env: TARGET=x86_64-unknown-linux-gnu
       rust: nightly
@@ -105,7 +78,7 @@ deploy:
   # - Encrypt it: `travis encrypt 0123456789012345678901234567890123456789
   # - Paste the output down here
   api_key:
-    secure: A9v3PIzQQ4U08OHFmDPQzNXbNHEb7YHyLXCvMF+dXFuNSvhUNlmQYykxqUf3dvikhJL2/bsZ14umm7ni7fQh0tGwJ4+lPpNzYAcweGgNXnWvjTpY6ovuRbr3gs4/srkyxp/GBDmSW5L8wFN3hKCB+Lm0YnIPB9IA2afP8a30+8VTXT9nv7pNqGny4ilN41ycr4DZi3sQoXdbruy7ClN7gsWW/GUiudBccHVIjmTapOFKLwZHODaUl/1/RDWQzh+i+17e1ivXuJPktDSrqmHPTZ15OjklnHKd6t179ry6VkGRg4R/R/YukVIqGzeaXGWAwdAQ5gE8cjGZghJLVi2jkDBJ85z8MvT+zLZLyliiuhLc/X8y7mkE1n0FKFtXXzFVt0l7V1LaEKbIbiV6XX3jsir4qgkqWjPHBZqO5mkGNFS16Dmt30/ZtEPAzXiINFXbWuWrpQ/LZ4NSto8IMrRTcoyDbAga/KYxJiNIeVuCe1E9dbytDM7K0GLtxJTul/WnnSeI6r//EFyC4bxYjyHhCXaag4q14KM+ak4rB0QgxsYzyGuh2MqyCoVj8YJLjLdKnL/SV7W7LPD40xlxvI6VCYTVi2ILHwL6vCxpukXYteX0c5IAIWkISDKu6nNBEgmCHXXPSqYSrgE5g7/QoCQHI8++nR8iKe0s7TWxZRydby8=
+    secure: "mzJzWILPVRYffyyLujJIbGJ+fURq4frvBp5MzI7KEl8aEixwBdhb2Q3Ue6//Xh3tRaAwvtXFReUUHQb/x4Sp+5sWwbtpJm297lZh0slaAhHv7dObpZw1v+53eIGq7ab3ba8yjaYQGiIcjpqjhfJByhjjh/OW00X+8wCxlCbIGXiFyxFmnti2MStvQ8HC74ZD8tpE4aZjkNAQxSP/LnAGpfJ6mfZBwOGv/uT8wpAoJpBS2OyxLRKv0FrhfId5LdvkhBKPJk81yM1h6Wocv8mQMsj9fUG5Bxh86GKaLSToB0vO4WhR14ZmpsmZofusndbUxGJEYTLKtIiP8uaEkFZzdrGoYMDjWFQyRAdyfibJpozppkVmuX1b5c/WZFueVAkHC+bi6uZdcm3NqDzlSIwWceJKzlsoLS/7f8tzYqWRUIKeg556Ps0+3gdhbFJjXeazPFO7cw3ys1hgTU7Br3R9LvNWueEhKPlTuzoVVSRFMw6squhFxjkdgw7Zu28kRv3RIEIBOXJQ25OwcyLKjD24W5OrwYbTZ2JxvocoUVn6wuZflYK+HqLHUIbac8UP7yr6p5pXBVDYJek5DtAnhke3N7lQdtzQorPuKZQauuc8wpp7fo8UvSmSK39884Exj1PCTC05oiU/ZrUR4vBvPtnvQDWMSNPXMD8b3hdEn4pyUi8="
   file_glob: true
   file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
   on:
