@@ -1,6 +1,5 @@
 # Character-snippets
 
-[![Docs.rs link](https://docs.rs/character-snippets/badge.svg)](https://docs.rs/character-snippets)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Travis Build Status](https://travis-ci.org/bgeron/character-snippets.svg?branch=master)](https://travis-ci.org/bgeron/character-snippets)
 [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/90nssws7muesco60?svg=true)](https://ci.appveyor.com/project/bgeron/character-snippets)
