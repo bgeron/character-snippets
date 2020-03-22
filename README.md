@@ -54,7 +54,8 @@ Or compile from scratch on Unix:
   # 4. Install character-snippets
   cargo install character-snippets
   # 5. Profit!
-  character-snippets --help
+  character-snippets --builtin > ~/.config/Code/User/snippets/chars.code-snippets # for Linux
+  character-snippets src/builtin-snippets.toml > ~/.config/Code/User/snippets/chars.code-snippets
   ```
 
 # License

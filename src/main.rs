@@ -21,6 +21,11 @@ use structopt::StructOpt;
 ///       xcheckmark = "✓"
 ///       xch = "✓"
 ///
+/// On Linux, a good place for this snippets file is
+///     ~/.config/Code/User/snippets/chars.code-snippets
+/// On Mac, a good place for this snippets file is
+///     "~/Library/Application Support/Code/User/snippets/chars.code-snippets"
+///
 /// Visual Studio Code will interpret variables such as $1 as placeholders.
 ///
 /// Output will be sent to standard output.
