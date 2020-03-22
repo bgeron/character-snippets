@@ -42,7 +42,7 @@ Output will be sent to standard output.
 
 → from the [GitHub releases page](https://github.com/bgeron/character-snippets/releases)
 
-**Alternively, compile from scratch on Unix:**
+**Alternatively, compile from scratch on Unix:**
 
 ```sh
 # 1. Install Rust
