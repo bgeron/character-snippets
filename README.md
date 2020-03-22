@@ -38,25 +38,25 @@ Output will be sent to standard output.
 
 # Installing
 
-Download binaries:
+**Download binaries:**
 
-  from the [GitHub releases page](https://github.com/bgeron/character-snippets/releases)
+→ from the [GitHub releases page](https://github.com/bgeron/character-snippets/releases)
 
-Or compile from scratch on Unix:
+**Alternively, compile from scratch on Unix:**
 
-  ```sh
-  # 1. Install Rust
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  # 2. Add ~/.cargo/bin to PATH
-  source $HOME/.cargo/env # or log in again
-  # 3. We need a basic build environment (cc, ld) for a dependency
-  apt install build-essential
-  # 4. Install character-snippets
-  cargo install character-snippets
-  # 5. Profit!
-  character-snippets --builtin > ~/.config/Code/User/snippets/chars.code-snippets # for Linux
-  character-snippets src/builtin-snippets.toml > ~/.config/Code/User/snippets/chars.code-snippets
-  ```
+```sh
+# 1. Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# 2. Add ~/.cargo/bin to PATH
+source $HOME/.cargo/env # or log in again
+# 3. We need a basic build environment (cc, ld) for a dependency
+apt install build-essential
+# 4. Install character-snippets
+cargo install character-snippets
+# 5. Profit!
+character-snippets --builtin > ~/.config/Code/User/snippets/chars.code-snippets # for Linux
+character-snippets src/builtin-snippets.toml > ~/.config/Code/User/snippets/chars.code-snippets
+```
 
 # License
 
