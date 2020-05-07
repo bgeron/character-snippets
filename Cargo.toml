@@ -1,6 +1,6 @@
 [package]
 name = "character-snippets"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Bram Geron <bram@bram.xyz>"]
 edition = "2018"
 
