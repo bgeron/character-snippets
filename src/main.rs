@@ -168,7 +168,7 @@ mod test {
         gen_vscode(&*parse_toml(in_toml).unwrap(), false, &mut buf).unwrap();
         assert_eq!(
             blake3::hash(&*buf).to_hex().as_str(),
-            "3e7ef23772f36408e071bcdb385a977e2c22536e85ccd52cb9909ab1617fa3f5"
+            "d1cc52182654e7b867f32b7a97ad4c7bf34ec57c8e76afe77909409f0c84c833"
         );
     }
 }
